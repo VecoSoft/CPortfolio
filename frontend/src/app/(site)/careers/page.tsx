@@ -27,7 +27,7 @@ export default async function CareersPage() {
         <div className="mt-16">
 {jobs.length === 0 ? (
             <p className="text-sm text-[var(--color-muted)]">
-              No open positions right now — check back soon, or send your resume to info@vecosoft.com.
+              No open positions right now — check back soon, or send your resume to careers@vecosoft.com .
             </p>
           ) : (
             <div className="divide-y divide-[var(--color-border)] border-t border-b border-[var(--color-border)]">
