@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default async function CareersPage() {
   const fetched = await sanityFetchList<JobDoc>(JOB_LIST_QUERY, {}, { tags: ["job"] });
-  cconst jobs: JobDoc[] = [];
+  const jobs: JobDoc[] = [];
 
   return (
     <div className="py-16 sm:py-24">
