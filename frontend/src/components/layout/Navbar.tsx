@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
@@ -96,9 +97,7 @@ export default function Navbar({
       <Container>
         <nav className="flex h-18 items-center justify-between py-4">
           <Link href="/" className="focus-ring flex items-center gap-2">
-            <span className="text-lg font-semibold tracking-tight text-[var(--color-paper)]">
-              {SITE.name.toUpperCase()}
-            </span>
+            <Image src="/logo.png" alt={SITE.name} width={742} height={200} priority className="h-9 w-auto" />
           </Link>
 
           <div className="hidden items-center gap-1 lg:flex">

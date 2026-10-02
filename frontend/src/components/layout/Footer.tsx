@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import TextReveal from "@/components/ui/TextReveal";
@@ -75,9 +76,7 @@ export default function Footer({
       <Container className="py-12 sm:py-16">
         <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:gap-10 lg:grid-cols-6">
           <div className="col-span-2">
-            <span className="text-lg font-semibold tracking-tight text-[var(--color-paper)]">
-              {name.toUpperCase()}
-            </span>
+            <Image src="/logo.png" alt={name} width={742} height={200} className="h-10 w-auto" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-[var(--color-muted)]">
               <TextReveal text={tagline} triggerOnView staggerMs={45} />
             </p>
