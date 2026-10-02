@@ -198,3 +198,19 @@ body {
     animation: none;
   }
 }
+
+/* Quote form 3D service preview (components/contact/service-visual).
+   A clean ice-blue stage with a faint blueprint grid that fades out at
+   the edges — present before WebGL loads and as the fallback without it. */
+.service-visual {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 45%, #ffffff 0%, rgba(255, 255, 255, 0) 70%),
+    linear-gradient(160deg, #f5f9ff 0%, #eaf2ff 55%, #e1ecfd 100%);
+}
+.service-visual-grid {
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, #000 30%, transparent 85%);
+}

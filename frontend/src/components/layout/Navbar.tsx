@@ -97,7 +97,7 @@ export default function Navbar({
       <Container>
         <nav className="flex h-18 items-center justify-between py-4">
           <Link href="/" className="focus-ring flex items-center gap-2">
-            <Image src="/logo.png" alt={SITE.name} width={742} height={200} priority className="h-10 w-auto sm:h-12" />
+            <Image src="/logo.png" alt={SITE.name} width={742} height={200} preload loading="eager" className="h-10 w-auto sm:h-12" />
           </Link>
 
           <div className="hidden items-center gap-1 lg:flex">
