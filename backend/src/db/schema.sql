@@ -310,6 +310,8 @@ CREATE TABLE IF NOT EXISTS project_inquiries (
   assigned_to    TEXT,
   internal_notes TEXT
 );
+-- Added after launch; nullable so existing inquiries are kept as-is.
+ALTER TABLE project_inquiries ADD COLUMN IF NOT EXISTS phone TEXT;
 
 CREATE TABLE IF NOT EXISTS job_applications (
   id            SERIAL PRIMARY KEY,

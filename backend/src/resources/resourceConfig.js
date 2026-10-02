@@ -345,6 +345,7 @@ const resources = {
       { name: "description", label: "Project description", type: "textarea", readOnly: true },
       { name: "name", type: "text", readOnly: true },
       { name: "email", type: "text", readOnly: true },
+      { name: "phone", label: "Mobile", type: "text", readOnly: true },
       { name: "submitted_at", label: "Submitted at", type: "text", readOnly: true },
       { name: "status", type: "select", options: LEAD_STATUS_OPTIONS, required: true },
       { name: "priority", type: "select", options: PRIORITY_OPTIONS },

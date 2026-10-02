@@ -19,6 +19,11 @@ export const quoteSchema = z.object({
   description: z.string().min(20, "Please describe your project (min 20 characters)"),
   name: z.string().min(2, "Please enter your name"),
   email: z.string().email("Please enter a valid email"),
+  phone: z
+    .string()
+    .trim()
+    .refine((v) => v === "" || /^\+?[0-9\s\-()]{7,20}$/.test(v), "Please enter a valid mobile number")
+    .optional(),
   company_website: z.string().max(0).optional(), // honeypot
 });
 export type QuoteFormValues = z.infer<typeof quoteSchema>;

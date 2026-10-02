@@ -128,6 +128,13 @@ export default function QuoteForm() {
           <input id="quote-email" type="email" autoComplete="email" inputMode="email" className={inputClass} placeholder="you@email.com" {...register("email")} />
           {errors.email && <p className={errorClass}>{errors.email.message}</p>}
         </div>
+        <div className="sm:col-span-2">
+          <label htmlFor="quote-phone" className={labelClass}>
+            Mobile Number <span className="font-normal text-[var(--color-muted-2)]">(optional)</span>
+          </label>
+          <input id="quote-phone" type="tel" autoComplete="tel" inputMode="tel" className={inputClass} placeholder="+880 1XXX-XXXXXX" {...register("phone")} />
+          {errors.phone && <p className={errorClass}>{errors.phone.message}</p>}
+        </div>
       </div>
 
       <Button type="submit" variant="primary" disabled={submitting} className="w-full sm:w-auto">

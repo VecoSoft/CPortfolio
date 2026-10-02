@@ -12,6 +12,7 @@ const payloadSchema = z.object({
   description: z.string().min(20),
   name: z.string().min(2),
   email: z.string().email(),
+  phone: z.string().trim().max(30).optional(),
   company_website: z.string().optional(), // honeypot
 });
 
@@ -54,6 +55,7 @@ export async function POST(request: Request) {
         description: parsed.data.description,
         name: parsed.data.name,
         email: parsed.data.email,
+        phone: parsed.data.phone || undefined,
       }),
     });
     if (!res.ok) throw new Error(`Backend responded ${res.status}`);

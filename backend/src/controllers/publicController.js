@@ -172,14 +172,14 @@ async function submitContact(req, res) {
 }
 
 async function submitInquiry(req, res) {
-  const { projectType, budget, timeline, description, name, email } = req.body;
+  const { projectType, budget, timeline, description, name, email, phone } = req.body;
   if (!projectType || !budget || !timeline || !description || !name || !email) {
     return res.status(400).json({ error: "projectType, budget, timeline, description, name and email are required." });
   }
   const { rows } = await query(
-    `INSERT INTO project_inquiries (project_type, budget, timeline, description, name, email)
-     VALUES ($1,$2,$3,$4,$5,$6) RETURNING id`,
-    [projectType, budget, timeline, description, name, email]
+    `INSERT INTO project_inquiries (project_type, budget, timeline, description, name, email, phone)
+     VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING id`,
+    [projectType, budget, timeline, description, name, email, phone || null]
   );
 
   await sendMail({
@@ -190,6 +190,7 @@ async function submitInquiry(req, res) {
       <h2>New "Get a Quote" submission</h2>
       <p><strong>Name:</strong> ${escapeHtml(name)}</p>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      ${phone ? `<p><strong>Mobile:</strong> ${escapeHtml(phone)}</p>` : ""}
       <p><strong>Project type:</strong> ${escapeHtml(projectType)}</p>
       <p><strong>Budget:</strong> ${escapeHtml(budget)}</p>
       <p><strong>Timeline:</strong> ${escapeHtml(timeline)}</p>
