@@ -35,8 +35,8 @@ export default function ServicesHeroShowcase() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="relative mx-auto w-full max-w-xl overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-3 shadow-[0_40px_90px_-50px_rgba(11,23,54,0.35)] sm:p-4">
-        <ServiceVisual service={active} showCaption={false} className="aspect-[4/3] rounded-[1.4rem]" />
+      <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-[1.75rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-2.5 shadow-[0_30px_70px_-45px_rgba(11,23,54,0.35)] sm:p-3">
+        <ServiceVisual service={active} showCaption={false} className="aspect-[4/3] rounded-[1.25rem]" />
 
         <div className="mt-3 flex items-center justify-between gap-3 px-1 sm:mt-4">
           <div className="min-w-0">
@@ -54,7 +54,7 @@ export default function ServicesHeroShowcase() {
         <div
           role="tablist"
           aria-label="Preview a service"
-          className="mt-3 grid grid-cols-3 gap-1.5 rounded-2xl bg-[var(--color-surface-raised)] p-1.5 sm:grid-cols-6"
+          className="mt-3 grid grid-cols-3 gap-1.5 rounded-2xl bg-[var(--color-surface-raised)] p-1.5"
         >
           {SERVICE_IDS.map((id) => {
             const Icon = SERVICES[id].icon;

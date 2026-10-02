@@ -24,7 +24,7 @@ export default function ServiceRow({
   const features = (service.features ?? []).slice(0, 3);
 
   return (
-    <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+    <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
       <div className={cn(reversed && "lg:order-2")}>
         <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--color-surface-raised)] text-[var(--color-electric)]">
           <Icon className="h-6 w-6" />
@@ -54,7 +54,7 @@ export default function ServiceRow({
         </Link>
       </div>
 
-      <div className={cn(reversed && "lg:order-1")}>
+      <div className={cn("mx-auto w-full max-w-md", reversed ? "lg:order-1 lg:mr-auto lg:ml-0" : "lg:ml-auto lg:mr-0")}>
         <ServiceVisual icon={service.icon} name={service.name} />
       </div>
     </div>

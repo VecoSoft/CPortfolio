@@ -26,14 +26,14 @@ export default async function ServicesPage() {
 
   return (
     <div>
-      <section className="relative overflow-hidden pt-12 pb-16 sm:pt-20 sm:pb-24">
+      <section className="relative overflow-hidden pt-10 pb-12 sm:pt-16 sm:pb-16">
         <div className="grid-field absolute inset-0 -z-10" />
         <div
           className="absolute -top-40 left-1/2 -z-10 h-[520px] w-[min(820px,140vw)] -translate-x-1/2 rounded-full opacity-20 blur-[120px]"
           style={{ background: "radial-gradient(circle, var(--color-electric) 0%, transparent 70%)" }}
         />
 
-        <Container className="grid gap-10 sm:gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <Container className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-12">
           <div>
             <h1 className="text-fluid-hero text-balance font-medium text-[var(--color-paper)]">
               Everything a growing product needs,{" "}
@@ -56,9 +56,9 @@ export default async function ServicesPage() {
         </Container>
       </section>
 
-      <div className="pb-20 sm:pb-28">
+      <div className="pb-16 sm:pb-20">
         <Container>
-          <div className="space-y-16 sm:space-y-24">
+          <div className="space-y-12 sm:space-y-16">
             {services.map((service, i) => (
               <ServiceRow
                 key={service._id}

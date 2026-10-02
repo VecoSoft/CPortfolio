@@ -9,7 +9,7 @@ export default function ServiceVisual({ icon, name }: { icon?: string; name: str
     <ServiceVisual3D
       service={sceneForService(icon, name)}
       showCaption={false}
-      className="aspect-[4/3] rounded-3xl"
+      className="aspect-[4/3] rounded-2xl"
     />
   );
 }
