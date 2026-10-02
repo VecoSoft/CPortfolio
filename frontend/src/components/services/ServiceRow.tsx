@@ -6,6 +6,7 @@ import ServiceVisual from "./ServiceVisual";
 type ServiceRowItem = {
   slug: { current: string };
   name: string;
+  icon?: string;
   shortDescription: string;
   features: string[];
 };
@@ -13,12 +14,10 @@ type ServiceRowItem = {
 export default function ServiceRow({
   service,
   icon,
-  index,
   reversed,
 }: {
   service: ServiceRowItem;
   icon: LucideIcon;
-  index: number;
   reversed: boolean;
 }) {
   const Icon = icon;
@@ -56,7 +55,7 @@ export default function ServiceRow({
       </div>
 
       <div className={cn(reversed && "lg:order-1")}>
-        <ServiceVisual icon={Icon} index={index} />
+        <ServiceVisual icon={service.icon} name={service.name} />
       </div>
     </div>
   );

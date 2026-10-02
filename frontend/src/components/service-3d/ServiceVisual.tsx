@@ -22,7 +22,18 @@ function useMediaQuery(query: string) {
   );
 }
 
-export default function ServiceVisual({ service }: { service: ServiceId | null }) {
+export default function ServiceVisual({
+  service,
+  showCaption = true,
+  className = "aspect-[5/4] sm:aspect-[4/3] md:aspect-[5/4]",
+}: {
+  service: ServiceId | null;
+  // Bottom-left chip naming the current scene. Off where the surrounding
+  // layout already labels it (Services page rows and hero tabs).
+  showCaption?: boolean;
+  // Sizing (aspect ratio) — fixed per breakpoint so nothing shifts on load.
+  className?: string;
+}) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const pointer = useRef({ x: 0, y: 0 });
   const [near, setNear] = useState(false);
@@ -77,7 +88,7 @@ export default function ServiceVisual({ service }: { service: ServiceId | null }
     <div
       ref={wrapRef}
       aria-hidden="true"
-      className="service-visual relative aspect-[5/4] w-full overflow-hidden rounded-2xl border border-[var(--color-border)] sm:aspect-[4/3] md:aspect-[5/4]"
+      className={cn("service-visual relative w-full overflow-hidden rounded-2xl border border-[var(--color-border)]", className)}
     >
       {/* Static backdrop: visible immediately, and the whole visual if
           WebGL is unavailable. Fixed aspect ratio = no layout shift. */}
@@ -102,14 +113,16 @@ export default function ServiceVisual({ service }: { service: ServiceId | null }
         </div>
       )}
 
-      <div className="pointer-events-none absolute bottom-3 left-3 flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white/80 px-3 py-1.5 text-xs font-medium text-[var(--color-paper)] shadow-sm backdrop-blur-sm sm:bottom-4 sm:left-4">
-        <span className="relative flex h-2 w-2">
-          <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--color-electric)] opacity-40 motion-safe:animate-ping" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-electric)]" />
-        </span>
-        {Icon && <Icon className="h-3.5 w-3.5 text-[var(--color-electric)]" />}
-        {info ? info.title : "Pick a service to preview"}
-      </div>
+      {showCaption && (
+        <div className="pointer-events-none absolute bottom-3 left-3 flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white/80 px-3 py-1.5 text-xs font-medium text-[var(--color-paper)] shadow-sm backdrop-blur-sm sm:bottom-4 sm:left-4">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--color-electric)] opacity-40 motion-safe:animate-ping" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-electric)]" />
+          </span>
+          {Icon && <Icon className="h-3.5 w-3.5 text-[var(--color-electric)]" />}
+          {info ? info.title : "Pick a service to preview"}
+        </div>
+      )}
     </div>
   );
 }

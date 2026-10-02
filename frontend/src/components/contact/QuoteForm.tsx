@@ -7,8 +7,8 @@ import { quoteSchema, type QuoteFormValues } from "@/lib/validations/contact";
 import Button from "@/components/ui/Button";
 import { CheckCircle2 } from "lucide-react";
 import { cn, formInputClass, formLabelClass, formErrorClass } from "@/lib/utils";
-import ServiceSelector from "@/components/contact/service-visual/ServiceSelector";
-import ServiceVisual from "@/components/contact/service-visual/ServiceVisual";
+import ServiceSelector from "@/components/service-3d/ServiceSelector";
+import ServiceVisual from "@/components/service-3d/ServiceVisual";
 
 const BUDGETS = ["Under $2,000", "$2,000 – $5,000", "$5,000 – $15,000", "$15,000+", "Not sure yet"];
 const TIMELINES = ["ASAP", "1–2 months", "3–6 months", "Flexible"];

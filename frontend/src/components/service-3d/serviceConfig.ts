@@ -74,3 +74,26 @@ export const PALETTE = {
   mist: "#C9D8F0",
   cyan: "#7DD3FC",
 } as const;
+
+// Services page rows come from the CMS, so pick the matching scene from
+// the service's icon first, then its name, falling back to the abstract
+// "Other" scene for anything new an admin adds.
+const ICON_SCENES: Record<string, ServiceId> = {
+  Code2: "Web",
+  Smartphone: "Mobile",
+  BrainCircuit: "AI/ML",
+  Settings2: "Software",
+  Cloud: "Software",
+  PenTool: "UI/UX",
+};
+
+export function sceneForService(icon: string | undefined, name: string): ServiceId {
+  if (icon && ICON_SCENES[icon]) return ICON_SCENES[icon];
+  const n = name.toLowerCase();
+  if (/\b(ai|ml|machine learning|automation|llm)\b/.test(n)) return "AI/ML";
+  if (/mobile|ios|android|app\b/.test(n)) return "Mobile";
+  if (/ui|ux|design/.test(n)) return "UI/UX";
+  if (/web|website|frontend|e-?commerce/.test(n)) return "Web";
+  if (/software|cloud|devops|backend|api|system|integration/.test(n)) return "Software";
+  return "Other";
+}

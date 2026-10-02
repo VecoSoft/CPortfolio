@@ -6,7 +6,7 @@ import { SERVICE_LIST_QUERY } from "@/sanity/queries";
 import { fallbackServices } from "@/sanity/fallbacks";
 import type { ServiceDoc } from "@/sanity/types";
 import ServiceRow from "@/components/services/ServiceRow";
-import ServicesHeroVisual from "@/components/services/ServicesHeroVisual";
+import ServicesHeroShowcase from "@/components/services/ServicesHeroShowcase";
 import {
   Code2, BrainCircuit, Smartphone, PenTool, Cloud, Settings2, type LucideIcon,
 } from "lucide-react";
@@ -52,7 +52,7 @@ export default async function ServicesPage() {
             </div>
           </div>
 
-          <ServicesHeroVisual />
+          <ServicesHeroShowcase />
         </Container>
       </section>
 
@@ -64,7 +64,6 @@ export default async function ServicesPage() {
                 key={service._id}
                 service={service}
                 icon={ICONS[service.icon] ?? Settings2}
-                index={i}
                 reversed={i % 2 === 1}
               />
             ))}

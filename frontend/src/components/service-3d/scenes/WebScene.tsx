@@ -41,7 +41,7 @@ export default function WebScene() {
   });
 
   return (
-    <group>
+    <group scale={0.9}>
       <group ref={root} rotation={[0.05, -0.16, 0]}>
         {/* Window */}
         <Slab size={[2.7, 1.8, 0.07]} radius={0.12} finish="glass" />
