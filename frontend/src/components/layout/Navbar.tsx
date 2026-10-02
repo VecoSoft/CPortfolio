@@ -97,7 +97,7 @@ export default function Navbar({
       <Container>
         <nav className="flex h-18 items-center justify-between py-4">
           <Link href="/" className="focus-ring flex items-center gap-2">
-            <Image src="/logo.png" alt={SITE.name} width={742} height={200} priority className="h-9 w-auto" />
+            <Image src="/logo.png" alt={SITE.name} width={742} height={200} priority className="h-10 w-auto sm:h-12" />
           </Link>
 
           <div className="hidden items-center gap-1 lg:flex">
@@ -147,8 +147,8 @@ export default function Navbar({
           </div>
 
           <div className="hidden lg:block">
-            <Button href="/get-a-quote" variant="primary" className="text-lg">
-              Start a Project
+            <Button href="/get-a-quote" variant="primary">
+              Let&apos;s Talk
             </Button>
           </div>
 
@@ -243,7 +243,7 @@ export default function Navbar({
 
           <div className="shrink-0 border-t border-[var(--color-border)] px-5 pt-4 pb-[calc(1.25rem+env(safe-area-inset-bottom))]">
             <Button href="/get-a-quote" variant="primary" className="w-full">
-              Start a Project
+              Let&apos;s Talk
             </Button>
           </div>
         </div>
