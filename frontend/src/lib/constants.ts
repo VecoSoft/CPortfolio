@@ -15,10 +15,7 @@ export const SITE = {
   // out of sync between them.
   url: "https://www.vecosoft.com",
   social: {
-    linkedin: "https://linkedin.com",
-    github: "https://github.com",
-    facebook: "https://facebook.com",
-    x: "https://x.com",
+    linkedin: "https://www.linkedin.com/company/vecosoft-bd/",
   },
 };
 // Temporary content toggles — company is pre-launch, so Solutions/

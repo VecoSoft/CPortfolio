@@ -54,9 +54,6 @@ export default function Footer({
 
   const socials = [
     { label: "in", name: "LinkedIn", href: social?.linkedin || SITE.social.linkedin },
-    { label: "gh", name: "GitHub", href: social?.github || SITE.social.github },
-    { label: "fb", name: "Facebook", href: social?.facebook || SITE.social.facebook },
-    { label: "x", name: "X", href: social?.x || SITE.social.x },
   ];
 
   // Show up to 3 real services by name, always ending with "All Services"
@@ -86,6 +83,8 @@ export default function Footer({
                   key={s.name}
                   href={s.href}
                   aria-label={s.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="focus-ring flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] text-xs font-medium text-[var(--color-muted)] transition-colors hover:border-[var(--color-border-hover)] hover:text-[var(--color-cyan)]"
                 >
                   {s.label}
